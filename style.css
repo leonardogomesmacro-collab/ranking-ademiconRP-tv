@@ -1,0 +1,678 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    color:#fff;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(120,0,0,.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            90deg,
+            #050505 0%,
+            #000000 45%,
+            #000000 100%
+        );
+}
+
+.container{
+    display:flex;
+    width:100%;
+    height:100vh;
+}
+
+/* =========================
+   ESQUERDA
+========================= */
+
+.left{
+    width:42%;
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    border-right:1px solid rgba(255,0,0,.15);
+}
+
+.logo-area{
+    text-align:center;
+    margin-top:10px;
+}
+
+.logo-ademicon{
+    width:240px;
+    height:auto;
+
+    filter:brightness(0) invert(1);
+
+    margin-bottom:10px;
+}
+
+.logo-area h2{
+    font-size:36px;
+    font-weight:800;
+    color:#ff2a2a;
+    text-transform:uppercase;
+}
+
+/* =========================
+   PODIUM
+========================= */
+
+.podium{
+    flex:1;
+
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+
+    gap:45px;
+
+    padding-bottom:150px;
+
+    margin-top:20px;
+}
+
+.winner{
+    width:160px;
+    text-align:center;
+}
+
+.first{
+    order:2;
+    position:relative;
+
+    transform:
+        translateX(-20px)
+        translateY(-35px);
+}
+
+.second{
+    order:1;
+    transform:translate(-0px,20px);
+}
+
+.third{
+    order:3;
+    transform:translate(20px,20px);
+}
+
+.first::before{
+    content:"🏆";
+
+    position:absolute;
+
+    top:-125px;
+
+    left:70%;
+
+    transform:translateX(-50%);
+
+    font-size:90px;
+
+    opacity:.15;
+
+    z-index:0;
+
+    pointer-events:none;
+}
+
+.first img{
+    position:relative;
+    z-index:2;
+
+    width:220px;
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    border:2px solid rgba(255,0,0,.35);
+
+    box-shadow:
+        0 0 20px rgba(255,0,0,.20);
+}
+
+.second img,
+.third img{
+    width:150px;
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.medal{
+    margin-top:12px;
+
+    font-size:78px;
+    font-weight:900;
+
+    color:#fff;
+}
+
+.podium-base p{
+    font-size:20px;
+    font-weight:900;
+    text-align:center;
+    text-transform:uppercase;
+}
+.podium-base h3{
+    margin-top:10px;
+    font-size:32px;
+    font-weight:900;
+    text-align:center;
+    color:#ff2a2a;
+
+    text-shadow:
+        0 0 10px rgba(255,0,0,.25);
+}
+/* =========================
+   DIREITA
+========================= */
+
+.right{
+    width:58%;
+    padding:10px;
+}
+
+.top-panel{
+    height:100%;
+
+    border:1px solid #ff2a2a;
+
+    padding:15px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(25,0,0,.15),
+            rgba(0,0,0,.90)
+        );
+}
+
+.top-title{
+    color:#ff2a2a;
+
+    font-size:42px;
+
+    font-weight:900;
+
+    margin-bottom:8px;
+}
+
+.last-update{
+    color:#999;
+
+    font-size:13px;
+
+    margin-bottom:10px;
+}
+
+.unit-total{
+
+    margin-bottom:15px;
+
+    padding:8px 12px;
+
+    border:1px solid rgba(255,0,0,.20);
+
+    background:
+    rgba(255,0,0,.05);
+
+    border-radius:8px;
+}
+
+.unit-total-label{
+
+    font-size:12px;
+
+    color:#aaa;
+
+    font-weight:700;
+}
+
+.unit-total-value{
+
+    font-size:34px;
+
+    font-weight:900;
+
+    color:#ffd21f;
+}
+
+/* =========================
+   TABELA
+========================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#ff1a1a;
+}
+
+th{
+    color:#fff;
+
+    padding:12px;
+
+    font-size:28px;
+
+    font-weight:800;
+}
+
+td{
+    padding:10px 12px;
+
+    font-size:24px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+}
+
+tbody tr:nth-child(even){
+    background:rgba(255,255,255,.02);
+}
+
+td:first-child{
+    width:60px;
+
+    text-align:center;
+
+    font-size:24px;
+
+    font-weight:900;
+}
+
+td:nth-child(2){
+
+    font-size:22px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+}
+
+td:last-child{
+
+    text-align:right;
+
+    color:#ffd21f;
+
+    font-size:22px;
+
+    font-weight:900;
+}
+
+/* ==========================
+   AJUSTE DAS LINHAS TOP 10
+========================== */
+
+.ranking-table tbody tr{
+
+    height:52px;
+    animation: fadeRanking .6s ease;
+}
+
+.ranking-table td{
+
+    padding:8px 14px;
+    font-size:15px;
+}
+
+.first::before{
+
+    animation:
+        trophyGlow 3s infinite;
+}
+
+/* =========================
+   FOOTER MOTIVACIONAL
+========================= */
+
+.footer-dashboard{
+
+    display:flex;
+
+    position:absolute;
+
+    bottom:18px;
+
+    left:0;
+
+    width:42%;
+
+    justify-content:center;
+
+    z-index:9999;
+}
+
+.footer-left{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:28px;
+
+    flex-wrap:wrap;
+}
+
+.footer-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#ffffff;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    opacity:.90;
+}
+
+.footer-item span{
+
+    color:#d0d0d0;
+
+    font-size:17px;
+
+    font-weight:700;
+}
+/* =========================
+   META DO MÊS
+========================= */
+.meta-card{
+
+    padding:8px 10px;
+    margin-bottom:8px;
+
+    border-radius:8px;
+}
+
+.meta-box{
+
+    margin-bottom:18px;
+
+    padding:12px;
+
+    border:1px solid rgba(255,0,0,.20);
+
+    border-radius:8px;
+
+    background:
+        rgba(255,0,0,.04);
+}
+
+.meta-label{
+
+    font-size:10px;
+
+    color:#aaa;
+
+    font-weight:700;
+
+    margin-bottom:2px;
+}
+
+.meta-values{
+
+    font-size:18px;
+
+    font-weight:900;
+
+    color:#fff;
+
+    margin-bottom:4px;
+}
+
+#metaAtual{
+    color:#ffd21f;
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:14px;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    background:
+        rgba(255,255,255,.08);
+
+    margin-bottom:4px;
+}
+
+.meta-footer{
+
+    font-size:12px;
+}
+
+#progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff1a1a,
+            #ffd21f
+        );
+
+    transition:1s;
+}
+
+.meta-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:18px;
+
+    font-weight:800;
+}
+
+#percentualMeta{
+    color:#00ff88;
+}
+
+#faltanteMeta{
+    color:#ccc;
+}
+
+
+/* ==========================================
+   ANIMAÇÕES
+========================================== */
+
+@keyframes fadeRanking{
+
+    from{
+
+        opacity:0.6;
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes podiumEntry{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes trophyGlow{
+
+    0%{
+        opacity:.8;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.8;
+    }
+
+}
+
+/* =====================================
+   ANIMAÇÕES
+===================================== */
+
+@keyframes podiumEntry{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.first,
+.second,
+.third{
+
+    animation:
+        podiumEntry .8s ease;
+}
+
+
+@keyframes fadeRanking{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+#rankingTable tr{
+
+    animation:
+        fadeRanking .6s ease;
+}
+
+@keyframes trophyGlow{
+
+    0%{
+        opacity:.15;
+    }
+
+    50%{
+        opacity:.35;
+    }
+
+    100%{
+        opacity:.15;
+    }
+
+}
+
+.first::before{
+
+    animation:
+        trophyGlow 3s infinite;
+}
+
+.footer-dashboard{
+
+    display:flex !important;
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:20px;
+
+    width:42%;
+
+    justify-content:center;
+
+    z-index:9999;
+
+}
+
+.footer-left{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+}
+
+.footer-item{
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:700;
+}
