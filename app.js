@@ -1,4 +1,4 @@
-const API = "https://script.google.com/macros/s/AKfycbxtdNficWaKQUWqoM7jqZy_dh5jjSfE_qBpI7QQzF0zJRFaZmmXLjbwXQcVLitAou6BZw/exec";
+const API = "https://script.google.com/macros/s/AKfycbxb3ge_7x5RH0Ly7LRxrJtCjyc1eEewPNYrkPicwPOhiZDupSpZ084svY8jFwVajrRJ_g/exec";
 
 function moeda(valor){
 
