@@ -9,7 +9,7 @@
 // =========================================================
 
 const API_URL =
-    "";
+    "https://script.google.com/macros/s/AKfycbzhF1BuvvpIOmvLq26xsN0wM9e6X60lg2ZiyyXyZwTy-YCIOXwy00cZa77IU2sP7Y6JXw/exec";
 
 
 // =========================================================
